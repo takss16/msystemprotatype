@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home page</title>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/record.css" />
+  </head>
+  <body>
+    <header>
+      <a class="navbar-brand" href="#home.html">Pabustan Birthing Clinic</a>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link " href="sampol.html">Create</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="record.html">Records</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="checkout.html">checkout Bills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html"></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="mw-100">
+      <div class="container text-center col-md-12 ">
+        <div class="container text-center col-md-9">
+          <input type="text" id="searchInput" placeholder="Search...">
+        </div>      
+        <div class="div"><p>search patient</p></div>
+        
+        <div class="h1">Patient Record</div>  
+        <div class="row">
+          <div class="col-12">
+            <form class="text-center">
+              
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <label for="lastName" class="form-label">Last Name:</label>
+                  <input type="text" class="form-control" id="lastName">
+                </div>
+                <div class="col-md-4">
+                  <label for="firstName" class="form-label">First Name:</label>
+                  <input type="text" class="form-control" id="firstName">
+                </div>
+                <div class="col-md-4">
+                  <label for="middleName" class="form-label">Middle Name:</label>
+                  <input type="text" class="form-control" id="middleName">
+                </div>
+              </div>
+              
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <label for="age" class="form-label">Age:</label>
+                  <input type="number" class="form-control" id="age">
+                </div>
+                <div class="col-md-4">
+                  <label for="birthday" class="form-label">Birthday:</label>
+                  <input type="date" class="form-control" id="birthday">
+                </div>
+                <div class="col-md-4">
+                  <label for="civilStatus" class="form-label">Civil Status:</label>
+                  <input type="text" class="form-control" id="civilStatus">
+                </div>
+                <div class="col-md-4">
+                  <label for="contact" class="form-label">Contact:</label>
+                  <input type="text" class="form-control" id="contact">
+                </div>
+                <div class="col-md-4">
+                  <label for="address" class="form-label">Address:</label>
+                  <input type="text" class="form-control" id="address">
+                </div>
+              </div>
+              
+              <div class="row g-3">
+                <div class="m-3">
+                  <div class="col-md-6">
+                    <label for="Forms" class="form-label">Select Form:</label>
+                    <select class="form-select" id="Forms" required onchange="showSpouse()">
+                      <option value="">-- Select --</option>
+                      <option value="checkup">Check-ups</option>
+                      <option value="maternal">Maternal</option>
+                      <option value="admit">Admit</option>
+                      <option value="child">Child</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              
+                  <div class="container bg">
+                    <div id="babyfield" style="display:none">
+                      <h3>Baby's Information</h3>
+                      <div class="bg-dark col-9"></div>
+                          <div class="row g-3">
+                            <div class="col-md-4">
+                              <label for="lastName" class="form-label">Last Name:</label>
+                              <input type="text" class="form-control" id="lastName" name="babyLastName" required>
+                            </div>
+                            <div class="col-md-4">
+                              <label for="firstName" class="form-label">Given Name:</label>
+                              <input type="text" class="form-control" id="firstName" name="babyGivenName" required>
+                            </div>
+                            <div class="col-md-4">
+                              <label for="middleName" class="form-label">Middle Name:</label>
+                              <input type="text" class="form-control" id="middleName" name="babyMiddleName">
+                            </div>
+                            <div class="col-12">
+                              <label for="address" class="form-label">Permanent Address:</label>
+                              <input type="text" class="form-control" id="address" name="babyAddress" required>
+                            </div>
+                            <div class="col-md-4">
+                              <label for="birthday" class="form-label">Date of Birth:</label>
+                              <input type="date" class="form-control" id="birthday" name="babyDOB" required>
+                            </div>
+                            <div class="col-md-4">
+                              <label for="timeOfBirth" class="form-label">Time of Birth:</label>
+                              <input type="time" class="form-control" id="timeOfBirth" name="babyTOB" required>
+                            </div>
+                            <div class="col-md-4">
+                              <label for="age" class="form-label">Age of Baby:</label>
+                              <input type="number" class="form-control" id="age" name="babyAge" required>
+                            </div>
+                            <div class="col-12">
+                              <label for="nationality" class="form-label">Nationality:</label>
+                              <input type="text" class="form-control" id="nationality" name="babyNationality" required>
+                            </div>
+                            <h3>Father's Information</h3>
+                            <div class="col-md-4">
+                              <label for="fatherLastName" class="form-label">Last Name:</label>
+                              <input type="text" class="form-control" id="fatherLastName" name="fatherLastName" required>
+                            </div>
+                            <div class="col-md-4">
+                              <label for="fatherFirstName" class="form-label">Given Name:</label>
+                              <input type="text" class="form-control" id="fatherFirstName" name="fatherFirstName" required>
+                            </div>
+                            <div class="col-md-4">
+                              <label for="fatherMiddleName" class="form-label">Middle Name:</label>
+                              <input type="text" class="form-control" id="fatherMiddleName" name="fatherMiddleName">
+                            </div>
+                            <div class="col-12">
+                              <div class="row justify-content-center">
+                                <div class="col-md-2 mb-3">
+                                  <button type="submit" class="btn btn-primary btn-block">Save</button>
+                                </div>
+                                <div class="col-md-2 mb-3">
+                                  <button type="submit" class="btn btn-primary btn-block">Update</button>
+                                </div>
+                                <div class="col-md-2 mb-3">
+                                  <button type="submit" class="btn btn-primary btn-block">Delete</button><br>
+                                </div>
+                                <div class="col-md-2 mb-3">
+                                  <button type="submit" class="btn btn-primary btn-block">Print</button><br>
+                                </div>
+                              </div>
+                            </div>
+
+                    </div>
+                    </div> 
+                  </div> 
+                    <div class="container bg">
+                    <div id="maternalfield" style="display:none">
+                      <h3>Patient Maternal Record</h3>
+                                      <div class="col-9 bg-dark"></div>
+                                      <div class="row g-3">
+                                        <div class="col-md-4">
+                                          <label for="gestational-age" class="form-label">Gestational Age:</label>
+                                          <input type="number" id="gestational-age" name="gestational-age" class="form-control" required>
+                                        </div>
+                                        <div class="col-md-4">
+                                          <label for="lmp" class="form-label">LMP (Last Menstrual Period):</label>
+                                          <input type="date" id="lmp" name="lmp" class="form-control" required>
+                                        </div>
+                                        <div class="col-md-4">
+                                          <label for="systolic" class="form-label">Blood pressure:</label>
+                                          <input type="number" id="systolic" name="systolic" class="form-control" required>
+                                        </div>
+                                        <div class="col-md-12">
+                                          <label for="reason" class="form-label">Medical History:</label>
+                                          <textarea id="reason" name="reason" rows="4" class="form-control" required></textarea>
+                                        </div>
+                                        <div class="col-md-5">
+                                          <label for="edc" class="form-label">EDC (Estimated Date of Confinement):</label>
+                                          <input type="date" id="edc" name="edc" class="form-control">
+                                        </div>
+                                        <div class="col-md-4">
+                                          <label for="aog" class="form-label">AOG (Age of Gestation):</label>
+                                          <input type="number" id="aog" name="aog" class="form-control">
+                                        </div>
+                                        <div class="col-md-3">
+                                          <label for="rht" class="form-label">RHT (Rectal Height):</label>
+                                          <input type="number" id="rht" name="rht" class="form-control">
+                                        </div>
+                                        <div class="col-md-4">
+                                          <label for="pres" class="form-label">PRES (Presentation):</label>
+                                          <input type="text" id="pres" name="pres" class="form-control">
+                                        </div>
+                                        <div class="col-md-4">
+                                          <label for="st" class="form-label">ST (Station):</label>
+                                          <input type="text" id="st" name="st" class="form-control">
+                                        </div>
+                                        <div class="col-md-4">
+                                          <label for="effacement" class="form-label">Effacement:</label>
+                                          <input type="text" id="effacement" name="effacement" class="form-control">
+                                        </div>
+                                        <div class="col-md-4">
+                                          <label for="dilation" class="form-label">Cervical Dilation:</label>
+                                          <input type="text" id="dilation" name="dilation" class="form-control">
+                                        </div>
+                                        <div class="col-md-4">
+                                          <label for="bow" class="form-label">BOW (Bag of Waters):</label>
+                                          <input type="text" id="bow" name="bow" class="form-control">
+                                        </div>
+                          
+                    
+                                          <div class="form-group col-md-4">
+                                            <label for="condition">Condition of Labor:</label>
+                                            <input type="radio" id="active" name="condition" value="active">Active
+                                            <input type="radio" id="not-active" name="condition" value="not-active">Not Active<br>
+                                          </div>
+                                          </div>
+                                         <div class="col-12">
+                            <div class="row justify-content-center">
+                              <div class="col-md-2 mb-3">
+                                <button type="submit" class="btn btn-primary btn-block">Save</button>
+                              </div>
+                              <div class="col-md-2 mb-3">
+                                <button type="submit" class="btn btn-primary btn-block">Update</button>
+                              </div>
+                              <div class="col-md-2 mb-3">
+                                <button type="submit" class="btn btn-primary btn-block">Delete</button><br>
+                              </div>
+                              <div class="col-md-2 mb-3">
+                                <button type="submit" class="btn btn-primary btn-block">Print</button><br>
+                              </div>
+                            </div>
+                          </div>   
+                        </div>
+                      </div>     
+                      
+                      <div class="container bg">
+                        <div id="checkupfield" style="display:none">
+                          <div class="container">
+                            <div class="row">
+                              <div class="col-12 bg-dark mb-3"></div>
+                              <div class="col-md-6">
+                                <label for="visit-date" class="form-label">Date of Visit:</label>
+                                <input type="date" id="visit-date" name="visit-date" class="form-control"><br>
+                              </div>
+                              <div class="col-md-6">
+                                <label for="visit-time" class="form-label">Time of Visit:</label>
+                                <input type="time" id="visit-time" name="visit-time" class="form-control"><br>
+                              </div>
+                              <div class="col-12">
+                                <label for="reason" class="form-label">Notes:</label>
+                                <textarea id="reason" name="reason" rows="4" class="form-control" required></textarea><br>
+                              </div>
+                              <div class="col-md-6">
+                                <label for="next-visit" class="form-label">Expected Date of Next Visit:</label>
+                                <input type="date" id="next-visit" name="next-visit" class="form-control"><br>
+                              </div>
+                              <div class="col-12">
+                                <div class="row">
+                                  <div class="col-md-3">
+                                    <button type="submit" class="btn btn-primary mb-3">Save</button>
+                                  </div>
+                                  <div class="col-md-3">
+                                    <button type="submit" class="btn btn-primary mb-3">Update</button>
+                                  </div>
+                                  <div class="col-md-3">
+                                    <button type="submit" class="btn btn-primary mb-3">Delete</button>
+                                  </div>
+                                  <div class="col-md-3">
+                                    <button type="submit" class="btn btn-primary mb-3">Print</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <div class="container bg">
+                        <div id="admitfield" style="display:none">
+                          <h3>Admission</h3>
+                          <div class="bg-dark col-9"></div>
+                          <form>
+                            <div class="row g-3">
+                              <div class="col-md-6">
+                                <label for="case-number" class="form-label">Case Number:</label>
+                                <input type="text" id="case-number" name="case-number" class="form-control"><br>
+                              </div>
+                              <div class="col-md-6">
+                                <label for="admission-date" class="form-label">Date of Admission:</label>
+                                <input type="date" id="admission-date" name="admission-date" class="form-control"><br>
+                              </div>
+                              <div class="col-md-6">
+                                <label for="discharge-date" class="form-label">Date of Discharge:</label>
+                                <input type="date" id="discharge-date" name="discharge-date" class="form-control"><br>
+                              </div>
+                              <div class="col-12">
+                                <label for="admission-diagnosis" class="form-label">Admission Diagnosis:</label>
+                                <textarea id="admission-diagnosis" name="admission-diagnosis" class="form-control"></textarea><br>
+                              </div>
+                              <div class="col-12">
+                                <label for="services-performed" class="form-label">Services Performed:</label>
+                                <textarea id="services-performed" name="services-performed" class="form-control"></textarea><br>
+                              </div>
+                              <div class="col-12">
+                                <label for="final-diagnosis" class="form-label">Final Diagnosis:</label>
+                                <textarea id="final-diagnosis" name="final-diagnosis" class="form-control"></textarea><br>
+                              </div>
+                              <div class="col-md-3">
+                                <button type="submit" class="btn btn-primary">Save</button><br>
+                              </div>
+                              <div class="col-md-3">
+                                <button type="submit" class="btn btn-primary">Update</button><br>
+                              </div>
+                              <div class="col-md-3">
+                                <button type="submit" class="btn btn-primary">Delete</button><br>
+                              </div>
+                              <div class="col-md-3">
+                                <button type="submit" class="btn btn-primary">Print</button><br>
+                              </div>
+                            </div>
+                          </form>
+
+
+                        </div>
+                      </div>                  
+                      <div class="container bg">
+                         <div id="checkupfield" style="display:none">
+                                <h3>Date of Visitations</h3>
+                                <div class="bg-dark col-9"></div>
+                                <div class="form-row">
+                                  <div class="form-group col-md-6">
+                                    <label for="visit-date">Date of Visit:</label>
+                                    <input type="date" id="visit-date" name="visit-date"><br>
+                                  </div>
+                                  <div class="form-group col-md-6">
+                                    <label for="visit-time">Time of Visit:</label>
+                                    <input type="time" id="visit-time" name="visit-time"><br>
+                                  </div>
+                                </div>
+                                <div class="form-row ">
+                                  <label for="reason">Notes:</label>
+                                  <textarea id="reason" name="reason" rows="4" cols="50" required></textarea><br>
+                                </div>
+                                <div class="form-group col-md-5">
+                                  <label for="next-visit">Expected Date of Next Visit:</label>
+                                  <input type="date" id="next-visit" name="next-visit"><br>
+                                </div>
+                                <div class="form-row">
+                                  <div class="form-group col-md-3">
+                                    <button type="submit" class="btn btn-primary">Save</button><br>
+                                  </div>
+                                  <div class="form-group col-md-3">
+                                    <button type="submit" class="btn btn-primary">Update</button><br>
+                                  </div>
+                                  <div class="form-group col-md-3">
+                                    <button type="submit" class="btn btn-primary">Delete</button><br>
+                                  </div>
+                                  <div class="form-group col-md-3">
+                                    <button type="submit" class="btn btn-primary">Print</button><br>
+                                  </div>
+                                </div>
+                         </div>
+                      </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    
+    <script>
+      function showSpouse() {
+        var forms = document.getElementById("Forms").value;
+
+        if (forms == "child") {
+          document.getElementById("babyfield").style.display = "block";
+        } 
+        else{
+          document.getElementById("babyfield").style.display = "none";
+        }
+        if(forms == "maternal"){
+          document.getElementById("maternalfield").style.display = "block";
+        }
+        else{
+          document.getElementById("maternalfield").style.display = "none";
+        }
+        if(forms == "checkup"){
+          document.getElementById("checkupfield").style.display = "block";
+        }else{
+          document.getElementById("checkupfield").style.display = "none";
+        }
+        if(forms == "admit"){
+          document.getElementById("admitfield").style.display = "block";
+        }else{
+          document.getElementById("admitfield").style.display = "none";
+        }
+      }
+    </script>
+    
+     
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+  </body>
+</html>
+
