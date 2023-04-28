@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Inventory Management System</title>
+    <!-- Bootstrap 5.1.0 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Inventory Management System</h1>
+        <hr>
+        <h2>Add Item</h2>
+        <form action="add_item.php" method="post">
+            <label for="item_name" class="form-label">Name:</label>
+            <input type="text" id="item_name" name="item_name" class="form-control" required><br>
+            <label for="item_quantity" class="form-label">Quantity:</label>
+            <input type="number" id="item_quantity" name="item_quantity" class="form-control" required><br>
+            <label for="item_price" class="form-label">Price:</label>
+            <input type="number" id="item_price" name="item_price" class="form-control" required><br>
+            <button type="submit" class="btn btn-primary">Add Item</button>
+        </form>
+        <hr>
+        <h2>Add Service</h2>
+        <form action="add_service.php" method="post">
+            <label for="service_name" class="form-label">Name:</label>
+            <input type="text" id="service_name" name="service_name" class="form-control" required><br>
+            <label for="service_price" class="form-label">Price:</label>
+            <input type="number" id="service_price" name="service_price" class="form-control" required><br>
+            <button type="submit" class="btn btn-primary">Add Service</button>
+        </form>
+        <hr>
+        <h2>Update Item Price</h2>
+        <form action="update_item_price.php" method="post">
+            <label for="item_name_update" class="form-label">Name:</label>
+            <input type="text" id="item_name_update" name="item_name_update" class="form-control" required><br>
+            <label for="item_price_update" class="form-label">Price:</label>
+            <input type="number" id="item_price_update" name="item_price_update" class="form-control" required><br>
+            <button type="submit" class="btn btn-warning">Update Price</button>
+        </form>
+        <hr>
+        <h2>Update Service Price</h2>
+        <form action="update_service_price.php" method="post">
+            <label for="service_name_update" class="form-label">Name:</label>
+            <input type="text" id="service_name_update" name="service_name_update" class="form-control" required><br>
+            <label for="service_price_update" class="form-label">Price:</label>
+            <input type="number" id="service_price_update" name="service_price_update" class="form-control"
+                required><br>
+            <button type="submit" class="btn btn-warning">Update Price</button>
+        </form>
+        <hr>
+		<hr>
+		<h2>Delete Service</h2>
+		<form action="delete_service.php" method="post">
+			<label for="service_name_delete" class="form-label">Name:</label>
+			<input type="text" id="service_name_delete" name="service_name_delete" class="form-control" required><br>
+			<button type="submit" class="btn btn-danger">Delete Service</button>
+		</form>
+	</div>
+
+    
+
+</body>
+</html>
